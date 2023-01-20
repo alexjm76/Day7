@@ -1,22 +1,11 @@
-class PrettyMixin:
-    def time_print(self):
-        import datetime
-        print(datetime.date.today())
-
-
-    def dump(self):
-        import pprint
-        pprint.pprint(vars(self)) #dictionary로 저장하는 변수 vars
-
-class Thing(PrettyMixin):
-    pass
-
-t = Thing()
-t.time_print()
-t.name = "Nyarlathotep"
-t.feature = "ichor"
-t.age = "eldritch"
-t.gender = "female"
-t.gender = "male"  #이걸로 덮어짐
-t.dump()
-#{'age': 'eldritch', 'feature': 'ichor', 'name': 'Nyarlathotep'}
+class Duck():
+    def __init__(self, input_name):
+        self.hidden_name = input_name
+def get_name(self):
+    print('inside the getter')
+    return self.hidden_name
+def set_name(self, input_name):
+    print('inside the setter')
+self.hidden_name = input_name
+don = Duck('Donald')
+don.get_name()
