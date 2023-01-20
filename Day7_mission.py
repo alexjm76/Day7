@@ -1,84 +1,52 @@
-# #10.1
-# class Thing:
-#     pass
-# example = Thing()
-#
-# print(Thing())
-# print(example)
-#
-# #10.2
-#
-# class Thing2:
-#     letters = 'abc'
-#
-# print(Thing2.letters)
-#
-# #10.3
-#
-# class Thing3():
-#     pass
-#
-# a = Thing3()
-# a.letter = "xyz"
-# print(a.letter)
+#10.9
+class Bear:
+    def eats(self):
+        return 'berries'
 
-#10.4
+class Rabbit:
+    def eats(self):
+        return 'clover'
+
+class Octothorpe:
+    def eats(self):
+        return 'campers'
 
 
-# class Element():
-#     def __init__(self, name, symbol, number):
-#         self.name = name
-#         self.symbol = symbol
-#         self.number = number
+a=Bear()
+b=Rabbit()
+c=Octothorpe()
+print(a.eats())
+print(b.eats())
+print(c.eats())
 
-# el = Element("Hydrogen", "H", 1)
 
-#10.5
+#10.10
+class Laser():
+    def __init__(self):
+        self.name = 'disintegrate'
+    def does(self):
+        return self.name
 
-# el_dict = {'name':'Hydrogen', 'symbol':'H', 'number':1}
-#
-# class Element():
-#     def __init__(self, name, symbol, number):
-#         self.name = name
-#         self.symbol = symbol
-#         self.number = number
-#
-#
-# hydrogen = Element(**el_dict)
+class Claw():
+    def __init__(self):
+        self.name = 'crush'
+    def does(self):
+        return self.name
 
-#10.6
+class SmartPhone():
+    def __init__(self):
+        self.name = 'ring'
+    def does(self):
+        return self.name
 
-# class Element():
-#     def __init__(self, name, symbol, number):
-#         self.name = name
-#         self.symbol = symbol
-#         self.number = number
-#
-#     def dump(self):
-#         return f"{self.name}, {self.symbol}, {self.number}"
-#
-# hydrogen = Element("Hydrogen" , "H", 1)
-# print(hydrogen.dump())
+class Robot():
+    def __init__(self):
+        self.laser = Laser()
+        self.claw = Claw()
+        self.smartphone = SmartPhone()
+    def does(self):
+        return f"{self.laser.does()}, {self.claw.does()}, {self.smartphone.does()}"
 
-#10.7
+robot = Robot()
 
-class Element():
-    def __init__(self, name, symbol, number):
-        self.hidden_name = name
-        self.hidden_symbol = symbol
-        self.hidden_number = number
-
-    @property
-    def name(self):
-        return self.hidden_name
-
-    @property
-    def symbol(self):
-        return self.hidden_symbol
-
-    @property
-    def number(self):
-        return self.hidden_number
-
-hydrogen = Element("Hydrogen" , "H", 1)
-print(hydrogen)
+print(robot.does())
